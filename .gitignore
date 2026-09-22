@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editor / OS
+*.swp
+.DS_Store
+
+# TripleA save files — personal game saves, not fixtures
+*.tsvg
