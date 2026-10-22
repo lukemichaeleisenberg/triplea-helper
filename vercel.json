@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/roll.py": {
+      "includeFiles": "triplea_rolls.py"
+    }
+  }
+}

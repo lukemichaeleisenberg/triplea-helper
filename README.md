@@ -56,6 +56,31 @@ Territory classification (from the save's `AllianceTracker`):
 - Ownership is current, not original — captured territory counts for
   its occupier.
 
+## Web frontend
+
+A small React page (Vite) that takes a `.tsvg` upload and shows the four
+rolls, backed by a Vercel Python function at `api/roll.py`. Both the CLI
+and the API share the parsing and rolling logic in `triplea_rolls.py`.
+
+### Local development
+
+```sh
+npm install && npm run dev
+```
+
+`npm run dev` also starts the Python API (`api/roll.py` on port 8000,
+using `.venv/bin/python`) and proxies `/api` to it. Use
+`npm run dev:api` to run the API on its own.
+
+Alternatively, `vercel dev` runs both together the way production does.
+
+### Deploying to Vercel
+
+Import the repo in Vercel (or run `vercel` from the repo root). The Vite
+framework preset and the Python function in `api/` are detected
+automatically; `requirements.txt` supplies `javaobj-py3`. Uploads are
+capped at 4 MB by the function (Vercel's request body limit is 4.5 MB).
+
 ## Notes
 
 Field names (`map`, `territories`, `owner`, `water`, `alliances`) come

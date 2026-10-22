@@ -9,3 +9,9 @@ __pycache__/
 
 # TripleA save files — personal game saves, not fixtures
 *.tsvg
+
+# Web
+node_modules/
+dist/
+.vercel/
+.vercel
